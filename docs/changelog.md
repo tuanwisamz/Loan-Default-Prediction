@@ -1,0 +1,3 @@
+- Completed all sections of `docs/project_brief.md` for the loan default classification project, based on the user's answers and a profile of `dataset/german_credit.csv`.
+- Renamed files and folders to consistent names and grouped the model folders under `models/`.
+- Updated references in `AGENTS.md` and changed the dataset link to a raw CSV URL, which works once the rename is pushed.
