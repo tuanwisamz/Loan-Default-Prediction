@@ -16,6 +16,7 @@ def main():
     print("Train:", X_train.shape, "Test:", X_test.shape)
 
     for name, model in get_models().items():
+        # TODO 3: wrap the model with build_pipeline() from features.py, then fit and predict with the pipeline
         model.fit(X_train, y_train)          # Learn
         predictions = model.predict(X_test)  # Predict
         print(f"\n{name} predictions:")

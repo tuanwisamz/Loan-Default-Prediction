@@ -13,9 +13,9 @@ def load_data():
 
 def clean_data(df):
     """Fix problems in the raw data. The steps are listed in docs/project_brief.md."""
-    # TODO: rename Attribute1 to checking_balance
-    # TODO: merge car0 into car in the purpose column
-    # TODO: drop age
+    df = df.rename(columns={"Attribute1": "checking_balance"})  # Example of renaming a column
+    df["purpose"] = df["purpose"].replace("car0" , "car")
+    df = df.drop(columns="age")  # Example of dropping columns
     return df
 
 
