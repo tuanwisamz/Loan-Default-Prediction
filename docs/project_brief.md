@@ -14,7 +14,7 @@ This project: **binary classification**. The target is `default` (yes / no).
 
 3. Data
 
-Import from dataset: `dataset/credit.csv` or `https://raw.githubusercontent.com/tuanwisamz/Scikit-learn-/main/dataset/credit.csv`
+Import from dataset: `dataset/raw/credit.csv` or `https://raw.githubusercontent.com/tuanwisamz/Scikit-learn-/main/dataset/raw/credit.csv`
 
 - Size: 1,000 rows, 17 columns (16 attributes and the target).
 - Target: `default`, 700 "no" and 300 "yes" (imbalanced).
@@ -52,9 +52,20 @@ Libraries: pandas and NumPy for data, scikit-learn for machine learning, Matplot
 
 7. Delivery and architecture
 
-Delivery: one Jupyter notebook.
+Delivery: Python scripts in `src/` for the pipeline, plus Jupyter notebooks in `notebooks/` for exploring the data. Charts and the model comparison table are saved to `results/`.
 
 Flow: load CSV → explore → clean → split → preprocess and train (pipeline) → compare models → evaluate on the test set → conclusions.
+
+| Step | Where |
+|---|---|
+| Explore | `notebooks/01_explore.ipynb` |
+| Load, clean, split | `src/data.py` |
+| Preprocess (one-hot encoding, scaling) | `src/features.py` |
+| Create the models | `src/models.py` |
+| Train and compare | `src/train.py` (the main script) |
+| Evaluate | `src/evaluate.py` |
+
+Shared settings (data path, `random_state`, test size) live in `src/config.py`. Run everything with `python src/train.py` from the project folder.
 
 8. Evaluation plan
 
