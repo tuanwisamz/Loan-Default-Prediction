@@ -1,1 +1,4 @@
 .env
+.venv/
+changelog.md
+manual_command.md

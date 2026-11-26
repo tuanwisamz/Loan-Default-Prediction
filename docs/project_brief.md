@@ -14,7 +14,7 @@ This project: **binary classification**. The target is `default` (yes / no).
 
 3. Data
 
-Import from dataset: `dataset/german_credit.csv` or `https://raw.githubusercontent.com/tuanwisamz/Scikit-learn-/main/dataset/german_credit.csv`
+Import from dataset: `dataset/credit.csv` or `https://raw.githubusercontent.com/tuanwisamz/Scikit-learn-/main/dataset/credit.csv`
 
 - Size: 1,000 rows, 17 columns (16 attributes and the target).
 - Target: `default`, 700 "no" and 300 "yes" (imbalanced).

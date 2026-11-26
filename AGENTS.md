@@ -1,5 +1,5 @@
 # Overview
-This project intended to use
+This project intended to create learning project that practises the full scikit-learn workflow (exploration, preprocessing, training, evaluation) by predicting loan default.
 
 # .github
 Folder for github workflow.
@@ -20,4 +20,5 @@ Contain goal, problem, tech stack etc template intended to narrow the project pa
 
 # models
 One folder for each model: dummy classifier, logistic regression, decision tree and random forest.
+
 
