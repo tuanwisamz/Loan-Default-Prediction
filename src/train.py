@@ -6,6 +6,7 @@ import pandas as pd
 
 from data import clean_data, load_data, split_data
 from models import get_models
+from features import build_preprocessor, build_pipeline
 
 
 def main():
@@ -16,9 +17,9 @@ def main():
     print("Train:", X_train.shape, "Test:", X_test.shape)
 
     for name, model in get_models().items():
-        # TODO 3: wrap the model with build_pipeline() from features.py, then fit and predict with the pipeline
-        model.fit(X_train, y_train)          # Learn
-        predictions = model.predict(X_test)  # Predict
+        pipeline = build_pipeline(model)
+        pipeline.fit(X_train, y_train)          # Learn
+        predictions = pipeline.predict(X_test)  # Predict
         print(f"\n{name} predictions:")
         print(pd.Series(predictions).value_counts())
 

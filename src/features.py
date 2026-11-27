@@ -27,15 +27,15 @@ CATEGORICAL_COLUMNS = [
 
 def build_preprocessor():
     """Return a ColumnTransformer that turns every column of X into numbers."""
-    # TODO 1: return a ColumnTransformer with two steps:
-    #   - "numeric":     StandardScaler() on NUMERIC_COLUMNS
-    #   - "categorical": OneHotEncoder(handle_unknown="ignore") on CATEGORICAL_COLUMNS
-    ...
+    return ColumnTransformer([
+        ("numeric", StandardScaler(), NUMERIC_COLUMNS),
+        ("categorical", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL_COLUMNS)
+    ])
 
 
 def build_pipeline(model):
     """Join the preprocessor and a model into one Pipeline: preprocess first, then the model."""
-    # TODO 2: return a Pipeline with two steps:
-    #   - "preprocess": build_preprocessor()
-    #   - "model":      model
-    ...
+    return Pipeline([
+        ("preprocess", build_preprocessor()),
+        ("model", model)
+    ])
